@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  english: MyString
+  portuguese: MyString
+  book: 1
+  lesson: 1
+  pronounce: MyString
+  revised: false
+
+two:
+  english: MyString
+  portuguese: MyString
+  book: 1
+  lesson: 1
+  pronounce: MyString
+  revised: false

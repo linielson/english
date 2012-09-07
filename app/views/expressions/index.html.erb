@@ -1,0 +1,33 @@
+<h1>Listing expressions</h1>
+
+<table>
+  <tr>
+    <th>English</th>
+    <th>Portuguese</th>
+    <th>Book</th>
+    <th>Lesson</th>
+    <th>Pronounce</th>
+    <th>Revised</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @expressions.each do |expression| %>
+  <tr>
+    <td><%= expression.english %></td>
+    <td><%= expression.portuguese %></td>
+    <td><%= expression.book %></td>
+    <td><%= expression.lesson %></td>
+    <td><%= expression.pronounce %></td>
+    <td><%= expression.revised %></td>
+    <td><%= link_to 'Show', expression %></td>
+    <td><%= link_to 'Edit', edit_expression_path(expression) %></td>
+    <td><%= link_to 'Destroy', expression, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Expression', new_expression_path %>

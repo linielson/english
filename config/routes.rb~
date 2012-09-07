@@ -1,5 +1,4 @@
 English::Application.routes.draw do
-
   resources :expressions
 
   # The priority is based upon order of creation:

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>English:</b>
+  <%= @expression.english %>
+</p>
+
+<p>
+  <b>Portuguese:</b>
+  <%= @expression.portuguese %>
+</p>
+
+<p>
+  <b>Book:</b>
+  <%= @expression.book %>
+</p>
+
+<p>
+  <b>Lesson:</b>
+  <%= @expression.lesson %>
+</p>
+
+<p>
+  <b>Pronounce:</b>
+  <%= @expression.pronounce %>
+</p>
+
+<p>
+  <b>Revised:</b>
+  <%= @expression.revised %>
+</p>
+
+
+<%= link_to 'Edit', edit_expression_path(@expression) %> |
+<%= link_to 'Back', expressions_path %>
