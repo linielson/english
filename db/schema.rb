@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120907142156) do
+ActiveRecord::Schema.define(:version => 20120908133621) do
+
+  create_table "exercises", :force => true do |t|
+    t.integer  "expression_id"
+    t.string   "answer"
+    t.string   "language_answer"
+    t.boolean  "correct_answer"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "exercises", ["expression_id"], :name => "index_exercises_on_expression_id"
 
   create_table "expressions", :force => true do |t|
     t.string   "english"

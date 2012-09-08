@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  expression: 
+  answer: MyString
+  language_answer: MyString
+  correct_answer: false
+
+two:
+  expression: 
+  answer: MyString
+  language_answer: MyString
+  correct_answer: false
