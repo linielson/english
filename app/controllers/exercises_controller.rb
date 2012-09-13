@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.json
@@ -25,7 +26,9 @@ class ExercisesController < ApplicationController
   # GET /exercises/new.json
   def new
     @exercise = Exercise.new
-
+    @exercise.language_answer = 'English'
+    #@exercise.language_answer = 'Português'
+    @exercise.expression = Expression.first 
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @exercise }
