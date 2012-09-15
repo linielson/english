@@ -12,11 +12,7 @@
   <% end %>
 
   <div class="field">
-    <% if @exercise.language_answer == "Português" %>
-      <%= f.label @exercise.expression.english %><br />
-    <% else %>
-      <%= f.label @exercise.expression.portuguese %><br />
-    <% end %>
+    <%= f.label @exercise.question %><br />  
     <%= hidden_field "exercise[expression_id]", @exercise.expression_id %>   
   </div>
   
@@ -28,11 +24,6 @@
   <div class="field">
     <%= f.label :answer %><br />
     <%= f.text_field :answer %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :correct_answer %><br />
-    <%= f.check_box :correct_answer %>
   </div>
   
   <div class="actions">
