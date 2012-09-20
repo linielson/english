@@ -20,16 +20,18 @@ class ExercisesController < ApplicationController
   end
 
   def new
+    
     @exercise = Exercise.new
     @exercise.language_answer = 'English'
     #@exercise.language_answer = 'Português'
-    @exercise.expression = Expression.first 
+
+    @exercise.expression = get_random_expression
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @exercise }
     end
   end
-
+  
   def create
     @exercise = Exercise.new(params[:exercise])
 
@@ -42,6 +44,19 @@ class ExercisesController < ApplicationController
         format.json { render json: @exercise.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+private
+  def get_random_expression
+    Expression.find(rand(Expression.count) + 1)
+
+    #begin
+    #  expre = Expression.find(rand(Expression.count) + 1)
+    #end while expre == nil
+    
+    #while expre == nil do
+    #  expre = Expression.find(rand(Expression.count) + 1)
+    #end
   end
 
 end
