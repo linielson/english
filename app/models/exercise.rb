@@ -2,7 +2,9 @@
 class Exercise < ActiveRecord::Base
   belongs_to :expression
   
-  before_save :correct_question  
+  before_save :correct_question
+  
+  validates_presence_of :answer 
   
   def question
     if language_answer == "Português"
@@ -13,7 +15,8 @@ class Exercise < ActiveRecord::Base
   end
   
 private
-
+  THIS_CALLBACK_NEEDS_TO_RETURN_TRUE_OTHERWISE_WILL_FAIL = true
+  
   def correct_question    
     if language_answer == "Português"
       self.correct_answer = compare_sentences self.answer, self.expression.portuguese
@@ -21,9 +24,7 @@ private
       self.correct_answer = compare_sentences self.answer, self.expression.english
     end
 
-    true # Ficamos por corrigir essa questão. Quando retorna false no
-         # before_save ele não continua. Visto que só queriamos carregar o
-         # campo "correct_answer".
+    THIS_CALLBACK_NEEDS_TO_RETURN_TRUE_OTHERWISE_WILL_FAIL
   end
   
   def compare_sentences first_sentence, second_sentence
