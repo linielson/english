@@ -1,7 +1,8 @@
 English::Application.routes.draw do
 
+  root :to => 'exercises#index'
+ 
   resources :exercises
-
   resources :expressions
 
   # The priority is based upon order of creation:
