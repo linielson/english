@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class ExercisesController < ApplicationController  
-  
+   
   def index
     respond_with @exercises = Exercise.all
   end
@@ -11,9 +11,7 @@ class ExercisesController < ApplicationController
 
   def new   
     @exercise = Exercise.new
-    @exercise.language_answer = 'English'
-    #@exercise.language_answer = 'Português'
-
+    @exercise.language_answer = params[:language]    
     respond_with @exercise.expression = get_random_expression    
   end
   

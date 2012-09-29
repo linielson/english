@@ -1,6 +1,8 @@
 # Encoding:UTF-8
 class Exercise < ActiveRecord::Base
   belongs_to :expression
+
+  LANGUAGES = ["Portuguese", "English"]
   
   before_save :correct_question
   
@@ -13,7 +15,7 @@ class Exercise < ActiveRecord::Base
       expression.portuguese
     end
   end
-  
+   
 private
   THIS_CALLBACK_NEEDS_TO_RETURN_TRUE_OTHERWISE_WILL_FAIL = true
   
