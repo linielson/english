@@ -13,7 +13,7 @@
 
 <% @exercises.each do |exercise| %>
   <tr>
-    <td><%= exercise.expression.english %></td>
+    <td><%= exercise.question %></td>
     <td><%= exercise.answer %></td>
     <td><%= exercise.language_answer %></td>
     <td><%= exercise.correct_answer %></td>
@@ -23,7 +23,7 @@
 </table>
 
 <br />
-<%= form_tag new_exercise_path %>
+<%= form_tag new_exercise_path do %>
 <%= select_tag "language", options_for_select(Exercise::LANGUAGES) %>
 <%= submit_tag 'New Exercise' %>
-<%= end_form_tag %>
+<% end %>

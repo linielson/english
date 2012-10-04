@@ -12,26 +12,13 @@ class ExercisesController < ApplicationController
   def new   
     @exercise = Exercise.new
     @exercise.language_answer = params[:language]    
-    respond_with @exercise.expression = get_random_expression    
+    respond_with @exercise.expression = Expression.random    
   end
   
   def create
     @exercise = Exercise.new(params[:exercise])
     flash[:notice] = "Exercise was successfully created." if @exercise.save
     respond_with @exercise, location: exercises_path    
-  end
-
-private
-
-  def get_random_expression
-    begin
-      begin
-        expressao = Expression.find(rand(Expression.maximum 'id') + 1)
-      rescue ActiveRecord::RecordNotFound
-        expressao = nil
-      end      
-    end while expressao == nil
-    expressao
   end
 
 end

@@ -9,7 +9,7 @@ class Exercise < ActiveRecord::Base
   validates_presence_of :answer 
   
   def question
-    if language_answer == "Português"
+    if language_answer == "Portuguese"
       expression.english
     else
       expression.portuguese
@@ -20,7 +20,7 @@ private
   THIS_CALLBACK_NEEDS_TO_RETURN_TRUE_OTHERWISE_WILL_FAIL = true
   
   def correct_question    
-    if language_answer == "Português"
+    if language_answer == "Portuguese"
       self.correct_answer = compare_sentences self.answer, self.expression.portuguese
     else
       self.correct_answer = compare_sentences self.answer, self.expression.english
