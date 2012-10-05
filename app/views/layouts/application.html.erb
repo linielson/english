@@ -10,11 +10,9 @@
 <%= link_to "Exercícios", exercises_path %> <br />
 <%= link_to "Expressões", expressions_path %> <br />
 
-  <div class="flash">
+  <div id="notice" class="flash">
     <% flash.each do |type, message| %>
-      <div class="message <%= type %>">
         <p><%= message %></p>
-      </div>
     <% end %>
   </div>
 

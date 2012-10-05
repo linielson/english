@@ -18,7 +18,7 @@ class ExercisesController < ApplicationController
   def create
     @exercise = Exercise.new(params[:exercise])
     flash[:notice] = "Exercise was successfully created." if @exercise.save
-    respond_with @exercise, location: exercises_path    
+    respond_with @exercise
   end
 
 end

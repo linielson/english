@@ -6,8 +6,6 @@ class Exercise < ActiveRecord::Base
   
   before_save :correct_question
   
-  validates_presence_of :answer 
-  
   def question
     if language_answer == "Portuguese"
       expression.english

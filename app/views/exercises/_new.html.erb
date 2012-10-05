@@ -1,0 +1,4 @@
+<%= form_tag new_exercise_path do %>
+<%= select_tag "language", options_for_select(Exercise::LANGUAGES, language) %>
+<%= submit_tag 'New Exercise' %>
+<% end %>
