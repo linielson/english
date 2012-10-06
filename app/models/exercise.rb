@@ -4,7 +4,7 @@ class Exercise < ActiveRecord::Base
 
   LANGUAGES = ["Portuguese", "English"]
   
-  before_save :correct_question
+  before_save :correct_question?
   
   def question
     if language_answer == "Portuguese"
@@ -13,11 +13,23 @@ class Exercise < ActiveRecord::Base
       expression.portuguese
     end
   end
+
+  def the_correct_answer
+    if language_answer == "Portuguese"
+      expression.portuguese
+    else
+      expression.english
+    end
+  end
+  
+  def humanize_correct_answer
+    correct_answer ? 'Yes' : 'No'
+  end
    
 private
   THIS_CALLBACK_NEEDS_TO_RETURN_TRUE_OTHERWISE_WILL_FAIL = true
   
-  def correct_question    
+  def correct_question?
     if language_answer == "Portuguese"
       self.correct_answer = compare_sentences self.answer, self.expression.portuguese
     else

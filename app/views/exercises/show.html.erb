@@ -5,18 +5,20 @@
 
 <p>
   <b>Answer:</b>
-  <%= @exercise.answer %>
+  <%= @exercise.answer.capitalize %>
 </p>
 
 <p>
-  <b>Language answer:</b>
-  <%= @exercise.language_answer %>
+  <b>Is it correct?</b> <%= @exercise.humanize_correct_answer %>
 </p>
 
 <p>
+  <% if not @exercise.correct_answer %>
   <b>Correct answer:</b>
-  <%= @exercise.correct_answer %>
+  <%= @exercise.the_correct_answer  %>
+  <% end %>
 </p>
+
 <%= render 'new', language: @exercise.language_answer %>
 
 <%= link_to 'Back', exercises_path %>

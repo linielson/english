@@ -14,9 +14,9 @@
 <% @exercises.each do |exercise| %>
   <tr>
     <td><%= exercise.question %></td>
-    <td><%= exercise.answer %></td>
+    <td><%= exercise.answer.capitalize %></td>
     <td><%= exercise.language_answer %></td>
-    <td><%= exercise.correct_answer %></td>
+    <td><%= exercise.humanize_correct_answer %></td>
     <td><%= link_to 'Show', exercise %></td>
   </tr>
 <% end %>
