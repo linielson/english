@@ -1,0 +1,19 @@
+English project anotations
+
++ Add user control
+  - Add logoff
+  - Add flash notices
+
++ Adjust visual interface
+
++ Permitir que um usuário logado possa adicionar uma Expression. 
+  Por exemplo: Se o usuário informar "I start to work", talvez ele queira
+  na verdade queira adicionar também "I start working". Ao fazer isso o
+  sistema gravaria a nova expressão como "não revisada". A nível de sistema
+  a nova expressão ficaria duplicada, porém com respostas diferentes. Então 
+  no momento de uma correção o sistema busca todas as respostas por
+  determinada expressão. 
+
+	The Cat - O Gato
+	The Cat - O Gata
+
