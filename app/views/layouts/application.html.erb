@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<ul class="hmenu">
+  <%= render 'devise/menu/registration_items' %>
+  <%= render 'devise/menu/login_items' %>
+</ul>
+
 <%= link_to "Exercícios", exercises_path %> <br />
 
 <%= link_to "Expressões", expressions_path %> <br />

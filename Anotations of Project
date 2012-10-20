@@ -1,8 +1,10 @@
 English project anotations
 
-+ Add user control
-  - Add logoff
+OK + Add user control
+OK  - Add logoff
   - Add flash notices
+
++ Associar o usuário logado aos Execícios e as Expressões.
 
 + Adjust visual interface
 
@@ -17,3 +19,11 @@ English project anotations
 	The Cat - O Gato
 	The Cat - O Gata
 
++ Criar a opção para mostrar/escolher os dados da Expression. Os dados serão
+  mostrados ao iniciar um novo exercício. A escolha se trata do momento de
+  eleger um novo exercício, ou seja, se o usuário escolher fazer exercícios
+  do livro 1 ou leção 1 por exemplo, só vai aparecer execícios respeitando
+  esse filtro.
+
++ Adicionar uma opção na tela de exercícios que permita dizer que a expressão
+  que você informou e foi considerada errada, na verdade também está certa.
