@@ -4,9 +4,9 @@ OK + Add user control
 OK  - Add logoff
   - Add flash notices
 
-+ Associar o usuário logado aos Execícios e as Expressões.
+OK + Permitir acessar execícios sem login.
 
-+ Adjust visual interface
++ Associar o usuário logado aos Execícios e as Expressões.
 
 + Permitir que um usuário logado possa adicionar uma Expression. 
   Por exemplo: Se o usuário informar "I start to work", talvez ele queira
@@ -27,3 +27,5 @@ OK  - Add logoff
 
 + Adicionar uma opção na tela de exercícios que permita dizer que a expressão
   que você informou e foi considerada errada, na verdade também está certa.
+
++ Adjust visual interface
