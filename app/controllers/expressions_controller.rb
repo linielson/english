@@ -1,4 +1,6 @@
 class ExpressionsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /expressions
   # GET /expressions.json
   def index

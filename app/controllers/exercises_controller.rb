@@ -1,8 +1,6 @@
 # encoding: UTF-8
 class ExercisesController < ApplicationController  
-   
-  before_filter :authenticate_user!
-  
+
   def index
     respond_with @exercises = Exercise.all
   end
