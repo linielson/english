@@ -1,6 +1,9 @@
 # Encoding:UTF-8
 class Exercise < ActiveRecord::Base
   belongs_to :expression
+  belongs_to :user
+  
+  validates_associated :user  
 
   PORTUGUESE = "Portuguese"
   ENGLISH = "English"
