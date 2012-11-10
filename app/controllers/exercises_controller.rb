@@ -17,6 +17,7 @@ class ExercisesController < ApplicationController
   
   def create
     @exercise = Exercise.new(params[:exercise])
+    @exercise.user = current_user
     @exercise.save
     respond_with @exercise
   end

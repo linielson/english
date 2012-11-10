@@ -6,7 +6,7 @@ OK  - Add logoff
 
 OK + Permitir acessar execícios sem login.
 
-+ Associar o usuário logado aos Execícios e as Expressões.
+OK + Associar o usuário logado aos Execícios e as Expressões.
 
 + Permitir que um usuário logado possa adicionar uma Expression. 
   Por exemplo: Se o usuário informar "I start to work", talvez ele queira
