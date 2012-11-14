@@ -6,6 +6,7 @@
     <th>Answer</th>
     <th>Language answer</th>
     <th>Correct?</th>
+    <th>User</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +18,7 @@
     <td><%= exercise.answer.capitalize %></td>
     <td><%= exercise.language_answer %></td>
     <td><%= exercise.humanize_correct_answer %></td>
+    <td><%= exercise.user.name if not exercise.user.nil? %></td> 
     <td><%= link_to 'Show', exercise %></td>
   </tr>
 <% end %>
@@ -24,4 +26,4 @@
 
 <br />
 
-<%= render 'new', language: "English" %>
+<%= render 'new', language: "English", book: 1, lesson: 1 %>

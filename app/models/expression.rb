@@ -4,15 +4,20 @@ class Expression < ActiveRecord::Base
   validates_presence_of :user
   validates_associated :user  
   
-  def self.random
-    begin
-      begin
-        expression = self.find(rand(self.maximum 'id') + 1)
-      rescue ActiveRecord::RecordNotFound
-        expression = nil
-      end      
-    end while expression == nil
-    expression
+  def self.random(book, lesson) 
+    filters = {} 
+
+    if not book.nil? 
+      filters[:book] = book
+    end
+    
+    if not lesson.nil?
+      filters[:lesson] = lesson
+    end
+    
+    expressions = Expression.all(conditions: filters)
+    
+    expressions[rand(expressions.count)]
   end
 
 end

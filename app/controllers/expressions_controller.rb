@@ -43,7 +43,7 @@ class ExpressionsController < ApplicationController
   # POST /expressions.json
   def create
     @expression = Expression.new(params[:expression])
-
+    @expression.user = current_user
     respond_to do |format|
       if @expression.save
         format.html { redirect_to @expression, notice: 'Expression was successfully created.' }
@@ -59,7 +59,7 @@ class ExpressionsController < ApplicationController
   # PUT /expressions/1.json
   def update
     @expression = Expression.find(params[:id])
-
+    @expression.user = current_user
     respond_to do |format|
       if @expression.update_attributes(params[:expression])
         format.html { redirect_to @expression, notice: 'Expression was successfully updated.' }

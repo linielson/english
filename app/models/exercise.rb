@@ -4,15 +4,11 @@ class Exercise < ActiveRecord::Base
   belongs_to :user
   
   validates_associated :user  
-
-  PORTUGUESE = "Portuguese"
-  ENGLISH = "English"
-  LANGUAGES = [PORTUGUESE, ENGLISH]
   
   before_save :correct_question?
   
   def question
-    if language_answer == PORTUGUESE
+    if language_answer == ExpressionOptions::PORTUGUESE
       expression.english
     else
       expression.portuguese
@@ -20,7 +16,7 @@ class Exercise < ActiveRecord::Base
   end
 
   def the_correct_answer
-    if language_answer == PORTUGUESE
+    if language_answer == ExpressionOptions::PORTUGUESE
       expression.portuguese
     else
       expression.english
@@ -35,7 +31,7 @@ private
   THIS_CALLBACK_NEEDS_TO_RETURN_TRUE_OTHERWISE_WILL_FAIL = true
   
   def correct_question?
-    if language_answer == PORTUGUESE
+    if language_answer == ExpressionOptions::PORTUGUESE
       self.correct_answer = compare_sentences self.answer, self.expression.portuguese
     else
       self.correct_answer = compare_sentences self.answer, self.expression.english
