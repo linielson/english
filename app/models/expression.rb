@@ -7,14 +7,10 @@ class Expression < ActiveRecord::Base
   def self.random(book, lesson) 
     filters = {} 
 
-    if not book.nil? 
-      filters[:book] = book
-    end
+    filters[:book] = book if not book == 'all'
     
-    if not lesson.nil?
-      filters[:lesson] = lesson
-    end
-    
+    filters[:lesson] = lesson if not lesson == 'all'
+      
     expressions = Expression.all(conditions: filters)
     
     expressions[rand(expressions.count)]

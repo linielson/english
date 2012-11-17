@@ -13,7 +13,10 @@
 
   <div class="field">
     <%= f.label @exercise.question %><br />  
-    <%= hidden_field :exercise, :expression_id %>   
+    <%= hidden_field :exercise, :expression_id %>
+    
+    <%= hidden_field_tag :book, params[:book] %>
+    <%= hidden_field_tag :lesson, params[:lesson] %>   
   </div>
   
   <div class="field">

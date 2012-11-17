@@ -6,20 +6,30 @@ class ExercisesController < ApplicationController
   end
 
   def show
+    @book = params[:book]
+    @lesson = params[:lesson]       
     respond_with @exercise = Exercise.find(params[:id])
   end
 
   def new   
     @exercise = Exercise.new
-    @exercise.language_answer = params[:language]    
-    respond_with @exercise.expression = Expression.random    
+    
+    @book = params[:book]
+    @lesson = params[:lesson]    
+    @exercise.language_answer = params[:language]
+    
+    respond_with @exercise.expression = Expression.random(@book, @lesson)    
   end
   
   def create
     @exercise = Exercise.new(params[:exercise])
     @exercise.user = current_user
     @exercise.save
-    respond_with @exercise
+    @book = params[:book]
+    @lesson = params[:lesson]       
+        
+    redirect_to action: 'show', id: @exercise.id, book: @book, lesson: @lesson
+    
   end
 
 end

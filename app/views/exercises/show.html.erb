@@ -19,6 +19,6 @@
   <% end %>
 </p>
 
-<%= render 'new', language: @exercise.language_answer %>
+<%= render 'new', language: @exercise.language_answer, book: @book, lesson: @lesson %>
 
 <%= link_to 'Back', exercises_path %>

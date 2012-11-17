@@ -29,3 +29,21 @@ OK + Associar o usuário logado aos Execícios e as Expressões.
   que você informou e foi considerada errada, na verdade também está certa.
 
 + Adjust visual interface
+
++ Tratar o erro de quando não é encontrado uma expressão
+
+{
+Showing /home/linielson/english/app/views/exercises/_form.html.erb where line #15 raised:
+
+undefined method `portuguese' for nil:NilClass
+Extracted source (around line #15):
+
+12:   <% end %>
+13: 
+14:   <div class="field">
+15:     <%= f.label @exercise.question %><br />  
+16:     <%= hidden_field :exercise, :expression_id %>
+17:     
+18:     <%= hidden_field_tag :book, params[:book] %>
+Trace of template inclusion: app/views/exercises/new.html.erb
+}

@@ -1,6 +1,19 @@
 <%= form_tag new_exercise_path do %>
-<%= select_tag "language", options_for_select(ExpressionOptions::LANGUAGES, language) %>
-<%= select_tag "book", options_for_select(ExpressionOptions.books, book) %>
-<%= select_tag "lesson", options_for_select(ExpressionOptions.lessons, lesson) %>
+
+<p>
+  <b>Language:</b>
+  <%= select_tag "language", options_for_select(ExpressionOptions::LANGUAGES, language) %>
+</p>
+
+<p>
+  <b>Book:</b>
+  <%= select_tag "book", options_for_select([["All", "all"]] + ExpressionOptions.books, book) %>
+</p>
+
+<p>
+  <b>Lesson:</b>
+  <%= select_tag "lesson", options_for_select([["All", "all"]] + ExpressionOptions.lessons, lesson) %>
+</p>
+
 <%= submit_tag 'New Exercise' %>
 <% end %>
