@@ -3,7 +3,9 @@ class Exercise < ActiveRecord::Base
   belongs_to :expression
   belongs_to :user
   
-  validates_associated :user  
+  validates_associated :user
+  
+  validates_presence_of :answer
   
   before_save :correct_question?
   

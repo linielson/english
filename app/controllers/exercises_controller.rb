@@ -27,9 +27,12 @@ class ExercisesController < ApplicationController
     @exercise.save
     @book = params[:book]
     @lesson = params[:lesson]       
-        
-    redirect_to action: 'show', id: @exercise.id, book: @book, lesson: @lesson
-    
+     
+    if @exercise.save
+      redirect_to action: 'show', id: @exercise.id, book: @book, lesson: @lesson 
+    else
+      render action: "new"
+    end  
   end
 
 end
