@@ -12,7 +12,7 @@
 
 <p>
   <b>Lesson:</b>
-  <%= select_tag "lesson", options_for_select([["All", "all"]] + ExpressionOptions.lessons, lesson) %>
+  <%= select_tag "lesson", options_for_select([["All", "all"]] + ExpressionOptions.lessons(book), lesson) %>
 </p>
 
 <%= submit_tag 'New Exercise' %>

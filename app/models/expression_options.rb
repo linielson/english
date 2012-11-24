@@ -9,8 +9,8 @@ class ExpressionOptions
     Expression.uniq.pluck(:book).sort
   end
   
-  def self.lessons
-    Expression.uniq.pluck(:lesson).sort
+  def self.lessons(book)
+    Expression.where(book: book).uniq.pluck(:lesson).sort
   end
   
 end
